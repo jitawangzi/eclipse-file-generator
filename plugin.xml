@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <!-- 添加依赖声明 -->
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.ui.ide"/>
+   </requires>
+
+   <!-- 命令声明 -->
    <extension point="org.eclipse.ui.commands">
       <command
             id="com.filegenerator.commands.generateFiles"
@@ -8,6 +20,7 @@
       </command>
    </extension>
    
+   <!-- 菜单贡献 -->
    <extension point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
@@ -27,6 +40,7 @@
       </menuContribution>
    </extension>
    
+   <!-- 处理器绑定 -->
    <extension point="org.eclipse.ui.handlers">
       <handler
             class="com.filegenerator.ui.GenerateFilesHandler"
