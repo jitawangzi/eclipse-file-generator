@@ -12,39 +12,103 @@
       <import plugin="org.eclipse.ui.ide"/>
    </requires>
 
-   <!-- 命令声明 -->
    <extension point="org.eclipse.ui.commands">
+      <!-- 生成文件命令 -->
       <command
-            id="com.filegenerator.commands.generateFiles"
+            id="com.filegenerator.generateFiles"
             name="生成文件">
       </command>
+      
+      <!-- 恢复文件命令 -->
+      <command
+            id="com.filegenerator.restoreFile"
+            name="从备份恢复文件">
+      </command>
+      
+      <!-- 批量恢复文件命令 -->
+      <command
+            id="com.filegenerator.restoreSession"
+            name="批量恢复文件">
+      </command>
    </extension>
-   
-   <!-- 菜单贡献 -->
+
+   <extension point="org.eclipse.ui.handlers">
+      <!-- 生成文件处理器 -->
+      <handler
+            class="com.filegenerator.ui.GenerateFilesHandler"
+            commandId="com.filegenerator.generateFiles">
+      </handler>
+      
+      <!-- 恢复文件处理器 -->
+      <handler
+            class="com.filegenerator.ui.RestoreFileHandler"
+            commandId="com.filegenerator.restoreFile">
+      </handler>
+      
+      <!-- 批量恢复文件处理器 -->
+      <handler
+            class="com.filegenerator.ui.RestoreSessionHandler"
+            commandId="com.filegenerator.restoreSession">
+      </handler>
+   </extension>
+
    <extension point="org.eclipse.ui.menus">
+      <!-- 生成文件菜单项 -->
       <menuContribution
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
-               commandId="com.filegenerator.commands.generateFiles"
-               label="从文本生成文件"
+               commandId="com.filegenerator.generateFiles"
+               label="生成文件"
                style="push">
-            <visibleWhen checkEnabled="false">
-               <iterate>
-                  <adapt type="org.eclipse.core.resources.IProject">
-                     <test property="org.eclipse.core.resources.projectNature" 
-                           value="org.eclipse.jdt.core.javanature"/>
-                  </adapt>
-               </iterate>
+            <visibleWhen>
+               <with variable="selection">
+                  <iterate ifEmpty="false" operator="or">
+                     <adapt type="org.eclipse.core.resources.IProject">
+                        <test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature"/>
+                     </adapt>
+                  </iterate>
+               </with>
             </visibleWhen>
          </command>
       </menuContribution>
-   </extension>
-   
-   <!-- 处理器绑定 -->
-   <extension point="org.eclipse.ui.handlers">
-      <handler
-            class="com.filegenerator.ui.GenerateFilesHandler"
-            commandId="com.filegenerator.commands.generateFiles">
-      </handler>
+      
+      <!-- 恢复单个文件菜单项 -->
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="com.filegenerator.restoreFile"
+               label="从备份恢复文件"
+               style="push">
+            <visibleWhen>
+               <with variable="selection">
+                  <iterate ifEmpty="false" operator="or">
+                     <or>
+                        <instanceof value="org.eclipse.core.resources.IFile"/>
+                        <instanceof value="org.eclipse.jdt.core.ICompilationUnit"/>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      
+      <!-- 批量恢复文件菜单项 -->
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="com.filegenerator.restoreSession"
+               label="批量恢复文件"
+               style="push">
+            <visibleWhen>
+               <with variable="selection">
+                  <iterate ifEmpty="false" operator="or">
+                     <adapt type="org.eclipse.core.resources.IProject">
+                        <test property="org.eclipse.core.resources.projectNature" value="org.eclipse.jdt.core.javanature"/>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
 </plugin>
