@@ -101,9 +101,9 @@ return null;
 2. **Generating Files**:
 - Copy your template to clipboard
 - Right-click on your project in Eclipse
-- Select "Generate Files"
+- Select "Batch Generate Files"
 - The plugin will automatically detect files and display them for preview
-- Click "Generate Files" to create all files
+- Click "Batch Generate Files" to create all files
 
 3. **Restoring Files**:
 - Right-click on a project
@@ -164,7 +164,7 @@ EclipseFileGenerator设计为与大语言模型无缝协作，加速您的开发
 
 2. **复制LLM的响应**（包含文件标记）
 
-3. **在Eclipse中生成**：右键点击项目，选择"生成文件"，代码将被正确分配到多个文件中
+3. **在Eclipse中生成**：右键点击项目，选择"Batch Generate Files"，代码将被正确分配到多个文件中
 
 这种工作流程大大减少了实现功能所需的时间，并确保了结构一致性。
 
@@ -219,7 +219,7 @@ return null;
 - 在Eclipse中右键点击您的项目
 - 选择"Batch Generate Files"
 - 插件将自动检测文件并显示预览
-- 点击"生成文件"创建所有文件
+- 点击"Batch Generate Files"创建所有文件
 
 3. **恢复文件**：
 - 右键点击项目
