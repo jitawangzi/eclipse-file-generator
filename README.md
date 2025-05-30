@@ -13,7 +13,7 @@ A powerful Eclipse plugin that generates files from text templates using "// Fil
 
 ### Overview
 
-FileForge is an Eclipse plugin designed to simplify file generation from text templates. It allows developers to quickly create multiple files from a single text input, making it ideal for scaffolding, boilerplate code generation, and template-based development. The plugin shines especially when paired with LLMs like ChatGPT, Claude, or GitHub Copilot, providing a seamless bridge between AI-generated code and your Eclipse workspace.
+EclipseFileGenerator is an Eclipse plugin designed to simplify file generation from text templates. It allows developers to quickly create multiple files from a single text input, making it ideal for scaffolding, boilerplate code generation, and template-based development. The plugin shines especially when paired with LLMs like ChatGPT, Claude, or GitHub Copilot, providing a seamless bridge between AI-generated code and your Eclipse workspace.
 
 ### Key Features
 
@@ -28,18 +28,14 @@ FileForge is an Eclipse plugin designed to simplify file generation from text te
 ### Installation
 
 1. **Manual Installation**:
-   - Download the latest `.jar` file from the [Releases](https://github.com/yourusername/FileForge/releases) page
+   - Download the latest `.jar` file from the [Releases](https://github.com/jitawangzi/EclipseFileGenerator/releases) page
    - Place it in your Eclipse's `dropins` folder
    - Restart Eclipse
 
-2. **Via Update Site** (Coming Soon):
-   - In Eclipse, go to Help > Install New Software
-   - Add the update site URL: `https://yourusername.github.io/FileForge/updatesite`
-   - Follow the installation wizard
 
 ### Working with LLMs
 
-FileForge is designed to work seamlessly with Large Language Models to accelerate your development process:
+EclipseFileGenerator is designed to work seamlessly with Large Language Models to accelerate your development process:
 
 1. **Ask your LLM to generate code with file markers**:
 
@@ -116,7 +112,7 @@ return null;
 
 ### LLM Prompt Examples
 
-Here are some effective prompts to use with LLMs when working with FileForge:
+Here are some effective prompts to use with LLMs when working with EclipseFileGenerator:
 
 1. **Creating a basic CRUD application**:
 
@@ -138,11 +134,6 @@ and delete operations. Separate each test file with '// File:' markers and appro
 
 ### Future Plans
 
-- Eclipse Marketplace publication
-- Custom template storage and management
-- Template variables and placeholder support
-- Project structure templates
-- Deeper LLM integration with predefined prompt templates
 
 ### Contributing
 
@@ -155,7 +146,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### 概述
 
-FileForge是一款Eclipse插件，旨在简化从文本模板生成文件的过程。它允许开发者从单一文本输入快速创建多个文件，非常适合用于脚手架搭建、样板代码生成和基于模板的开发。该插件与ChatGPT、Claude或GitHub Copilot等大语言模型(LLM)配合使用时特别出色，为AI生成的代码与Eclipse工作空间之间提供了无缝桥接。
+EclipseFileGenerator是一款Eclipse插件，旨在简化从文本模板生成文件的过程。它允许开发者从单一文本输入快速创建多个文件，非常适合用于脚手架搭建、样板代码生成和基于模板的开发。该插件与ChatGPT、Claude或GitHub Copilot等大语言模型(LLM)配合使用时特别出色，为AI生成的代码与Eclipse工作空间之间提供了无缝桥接。
 
 ### 主要特性
 
@@ -170,18 +161,14 @@ FileForge是一款Eclipse插件，旨在简化从文本模板生成文件的过�
 ### 安装方法
 
 1. **手动安装**：
-- 从[Releases](https://github.com/yourusername/FileForge/releases)页面下载最新的`.jar`文件
+- 从[Releases](https://github.com/jitawangzi/EclipseFileGenerator/releases)页面下载最新的`.jar`文件
 - 将其放入Eclipse的`dropins`文件夹中
 - 重启Eclipse
 
-2. **通过更新站点安装**（即将推出）：
-- 在Eclipse中，转到Help > Install New Software
-- 添加更新站点URL：`https://yourusername.github.io/FileForge/updatesite`
-- 按照安装向导进行操作
 
 ### 与大语言模型协作
 
-FileForge设计为与大语言模型无缝协作，加速您的开发过程：
+EclipseFileGenerator设计为与大语言模型无缝协作，加速您的开发过程：
 
 1. **要求LLM生成带有文件标记的代码**：
 
@@ -255,7 +242,7 @@ return null;
 
 ### LLM提示示例
 
-以下是与FileForge配合使用时，一些有效的LLM提示：
+以下是与EclipseFileGenerator配合使用时，一些有效的LLM提示：
 
 1. **创建基本CRUD应用**：
 
@@ -275,28 +262,12 @@ return null;
 
 ### 未来计划
 
-- 发布到Eclipse Marketplace
-- 自定义模板存储和管理
-- 模板变量和占位符支持
-- 项目结构模板
-- 更深入的LLM集成，包含预定义提示模板
 
 ### 贡献
 
 欢迎贡献！请随时提交Pull Request。
 
----
 
-## Screenshots / 截图
-
-[Main Dialog](https://example.com/placeholder-image.png)
-*Main interface of FileForge / FileForge的主界面*
-
-[File Generation](https://example.com/placeholder-image.png)
-*File generation preview / 文件生成预览*
-
-[Backup Restoration](https://example.com/placeholder-image.png)
-*Backup restoration dialog / 备份恢复对话框*
 
 ---
 
