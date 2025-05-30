@@ -48,7 +48,7 @@ sql_more
 
 2. **Copy the LLM response** (with file markers)
 
-3. **Generate in Eclipse**: Right-click your project, select "Generate Files", and the code will be properly distributed across multiple files
+3. **Generate in Eclipse**: Right-click your project, select "Batch Generate Files", and the code will be properly distributed across multiple files
 
 This workflow dramatically reduces the time needed to implement features and ensures structural consistency.
 
@@ -106,8 +106,8 @@ return null;
 - Click "Generate Files" to create all files
 
 3. **Restoring Files**:
-- Right-click on a file
-- Select "Restore from backup"
+- Right-click on a project
+- Select "Batch Restore Files"
 - Choose a backup version to restore
 
 ### LLM Prompt Examples
@@ -231,13 +231,13 @@ return null;
 2. **生成文件**：
 - 将模板复制到剪贴板
 - 在Eclipse中右键点击您的项目
-- 选择"生成文件"
+- 选择"Batch Generate Files"
 - 插件将自动检测文件并显示预览
 - 点击"生成文件"创建所有文件
 
 3. **恢复文件**：
-- 右键点击文件
-- 选择"从备份恢复文件"
+- 右键点击项目
+- 选择"Batch Restore Files"
 - 选择要恢复的备份版本
 
 ### LLM提示示例
