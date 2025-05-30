@@ -218,13 +218,17 @@ public class BackupManager {
      */
     private void saveSessions() {
         try {
-            // 确保插件数据目录存在
-            File dataDir = Platform.getStateLocation(Platform.getBundle("com.filegenerator")).toFile();
-            if (!dataDir.exists()) {
-                dataDir.mkdirs();
+            File sessionFile = getSessionFile();
+            if (sessionFile == null) {
+                log.log(new Status(Status.INFO, "com.filegenerator", "无法获取会话文件位置，跳过备份保存"));
+                return;
             }
             
-            File sessionFile = new File(dataDir, SESSION_FILE);
+            // 确保父目录存在
+            File parentDir = sessionFile.getParentFile();
+            if (!parentDir.exists()) {
+                parentDir.mkdirs();
+            }
             
             try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(sessionFile))) {
                 oos.writeObject(backupSessions);
@@ -232,7 +236,7 @@ public class BackupManager {
             
             log.log(new Status(Status.INFO, "com.filegenerator", "已保存 " + backupSessions.size() + " 个备份会话"));
         } catch (IOException e) {
-            log.log(new Status(Status.ERROR, "com.filegenerator", "保存备份会话失败", e));
+            log.log(new Status(Status.WARNING, "com.filegenerator", "保存备份会话失败，但不影响主要功能", e));
         }
     }
     
@@ -242,10 +246,9 @@ public class BackupManager {
     @SuppressWarnings("unchecked")
     private void loadSessions() {
         try {
-            File dataDir = Platform.getStateLocation(Platform.getBundle("com.filegenerator")).toFile();
-            File sessionFile = new File(dataDir, SESSION_FILE);
-            
-            if (!sessionFile.exists()) {
+            File sessionFile = getSessionFile();
+            if (sessionFile == null || !sessionFile.exists()) {
+                backupSessions = new ArrayList<>();
                 return;
             }
             
@@ -257,10 +260,36 @@ public class BackupManager {
                 }
             }
         } catch (Exception e) {
-            log.log(new Status(Status.ERROR, "com.filegenerator", "加载备份会话失败", e));
+            log.log(new Status(Status.WARNING, "com.filegenerator", "加载备份会话失败，将使用新的会话", e));
             // 如果加载失败，使用空列表
             backupSessions = new ArrayList<>();
         }
+    }
+    
+    /**
+     * 获取会话文件位置，兼容多种环境
+     */
+    private File getSessionFile() {
+        try {
+            // 首先尝试插件状态位置
+            if (Platform.getBundle("com.filegenerator") != null) {
+                File dataDir = Platform.getStateLocation(Platform.getBundle("com.filegenerator")).toFile();
+                return new File(dataDir, SESSION_FILE);
+            }
+        } catch (Exception e) {
+            // 如果插件状态位置不可用，忽略错误
+        }
+        
+        try {
+            // 尝试使用临时目录
+            File tempDir = new File(System.getProperty("java.io.tmpdir"), "filegenerator");
+            return new File(tempDir, SESSION_FILE);
+        } catch (Exception e) {
+            // 如果临时目录也不可用，记录警告
+            log.log(new Status(Status.WARNING, "com.filegenerator", "无法确定备份存储位置", e));
+        }
+        
+        return null;
     }
     
     /**
@@ -297,4 +326,3 @@ public class BackupManager {
         }
     }
 }
-

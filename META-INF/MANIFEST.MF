@@ -1,17 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: File Generator Plugin
+Bundle-Name: File Generator
 Bundle-SymbolicName: com.filegenerator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.filegenerator.Activator
-Bundle-Vendor: Example
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
- org.eclipse.jdt.core
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+ org.eclipse.jdt.core,
+ org.eclipse.ui.ide,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.workbench.texteditor
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: com.filegenerator.core,
- com.filegenerator.ui,
- com.filegenerator.cli
-Main-Class: com.filegenerator.cli.CommandLineApp
+Export-Package: com.filegenerator,
+ com.filegenerator.core,
+ com.filegenerator.ui
+Automatic-Module-Name: com.filegenerator
+
