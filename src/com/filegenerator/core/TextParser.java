@@ -43,11 +43,11 @@ public class TextParser {
 
 		// 记录原始输入的前100个字符，帮助调试
 		String preview = text.length() > 100 ? text.substring(0, 100) + "..." : text;
-		log.log(new Status(Status.INFO, "com.filegenerator", "输入文本预览: " + preview.replace("\n", "\\n")));
+		log.log(new Status(Status.OK, "com.filegenerator", "输入文本预览: " + preview.replace("\n", "\\n")));
 
 		// 使用简单的行分割方法查找文件标记
 		String[] lines = text.split("\n");
-		log.log(new Status(Status.INFO, "com.filegenerator", "输入文本共 " + lines.length + " 行"));
+		log.log(new Status(Status.OK, "com.filegenerator", "输入文本共 " + lines.length + " 行"));
 
 		List<Integer> fileMarkerLines = new ArrayList<>();
 		for (int i = 0; i < lines.length; i++) {
