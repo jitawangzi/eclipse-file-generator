@@ -16,7 +16,7 @@
       <!-- 生成文件命令 -->
       <command
             id="com.filegenerator.generateFiles"
-            name="生成文件">
+            name="Batch Generate Files">
       </command>
       
       <!-- 恢复文件命令 -->
@@ -28,7 +28,7 @@
       <!-- 批量恢复文件命令 -->
       <command
             id="com.filegenerator.restoreSession"
-            name="批量恢复文件">
+            name="Batch Restore Files">
       </command>
    </extension>
 
@@ -58,7 +58,7 @@
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="com.filegenerator.generateFiles"
-               label="生成文件"
+               label="Batch Generate Files"
                style="push">
             <visibleWhen>
                <with variable="selection">
@@ -97,7 +97,7 @@
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="com.filegenerator.restoreSession"
-               label="批量恢复文件"
+               label="Batch Restore Files"
                style="push">
             <visibleWhen>
                <with variable="selection">
