@@ -1,5 +1,6 @@
 package com.filegenerator.core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,8 +9,9 @@ import java.util.UUID;
 /**
  * 表示一次备份会话，包含同一次操作中备份的多个文件
  */
-public class BackupSession {
-    private String sessionId;
+public class BackupSession implements Serializable {
+	private static final long serialVersionUID = -8924593704534627111L;
+	private String sessionId;
     private Date timestamp;
     private List<String> files;
     private List<BackupManager.BackupEntry> backupEntries;
