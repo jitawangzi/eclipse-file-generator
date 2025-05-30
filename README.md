@@ -112,24 +112,10 @@ return null;
 
 ### LLM Prompt Examples
 
-Here are some effective prompts to use with LLMs when working with EclipseFileGenerator:
+Here are some useful LLM tips when used with EclipseFileGenerator to format LLM output for easier copying and pasting:
 
-1. **Creating a basic CRUD application**:
+**Please give the full contents of all files. For newly added files, give the full contents; for modified files, give the full contents of the modified files without omitting any of the original parts. Please use the following format for output: // File: File path File content... The file path can be a full path or a path relative to the project root. Please combine all file contents into one continuous code block, using the above file delimiter comments to distinguish between different files. This way I can copy everything at once without including Markdown formatting indicators or other non-code content.**
 
-
-Generate a Spring Boot CRUD application for a Product entity with name, description, and price.
-Include controller, service, repository, and model classes. Mark each file with a '// File:'
-comment at the beginning, using appropriate paths for a Maven project structure.
-
-2. **Generating a design pattern implementation**:
-
-Implement a Builder pattern for a 'Document' class with fields for title, content, author,
-and timestamp. Use appropriate '// File:' markers at the beginning of each file.
-
-3. **Creating test files**:
-
-Generate unit tests for a UserService class that has methods for create, read, update,
-and delete operations. Separate each test file with '// File:' markers and appropriate paths.
 
 
 ### Future Plans
@@ -242,23 +228,16 @@ return null;
 
 ### LLM提示示例
 
-以下是与EclipseFileGenerator配合使用时，一些有效的LLM提示：
+以下是与EclipseFileGenerator配合使用时，有效的LLM提示，可以使LLM输出格式化的结果，更适合复制粘贴：
 
-1. **创建基本CRUD应用**：
 
-生成一个Spring Boot CRUD应用，用于管理具有名称、描述和价格的Product实体。
-包括控制器、服务、仓库和模型类。在每个文件开头使用'// File:'注释进行标记，
-使用适合Maven项目结构的路径。
+**请给出所有文件的完整内容。对于新增文件，提供全部内容；对于修改的文件，提供修改后的文件完整内容，不要省略任何原有部分。
+请使用以下格式输出：
+// File: 文件路径
+文件内容…
+文件路径可以是完整路径，也可以是相对于项目根目录的路径。
+请将所有文件内容合并在一个连续的代码块中，使用上述文件分隔注释来区分不同文件。这样我可以一次性复制所有内容，而不会包含Markdown格式指示符或其他非代码内容。**
 
-2. **生成设计模式实现**：
-
-为'Document'类实现Builder模式，该类具有标题、内容、作者和时间戳字段。
-在每个文件的开头使用适当的'// File:'标记。
-
-3. **创建测试文件**：
-
-为UserService类生成单元测试，该类具有创建、读取、更新和删除操作的方法。
-使用'// File:'标记和适当的路径分隔每个测试文件。
 
 ### 未来计划
 
