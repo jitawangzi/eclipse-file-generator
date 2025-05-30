@@ -1,4 +1,4 @@
-# FileForge
+# EclipseFileGenerator
 
 A powerful Eclipse plugin that generates files from text templates using "// File:" markers. Perfectly integrates with LLMs (Large Language Models) to transform AI-generated code into actual project files.
 
