@@ -95,7 +95,7 @@ public class InputDialog extends Dialog {
     @Override
     protected void configureShell(Shell newShell) {
         super.configureShell(newShell);
-        newShell.setText("生成文件");
+		newShell.setText("Generate files");
     }
 
     @Override
@@ -117,7 +117,7 @@ public class InputDialog extends Dialog {
         
         // 模块选择
         Label moduleLabel = new Label(inputArea, SWT.NONE);
-		moduleLabel.setText("target project:");
+		moduleLabel.setText("target project");
         moduleLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
         
         moduleCombo = new Combo(inputArea, SWT.READ_ONLY);
@@ -134,16 +134,16 @@ public class InputDialog extends Dialog {
         
         // 文本输入区域
         Label textLabel = new Label(inputArea, SWT.NONE);
-        textLabel.setText("包含文件定义的文本:");
+		textLabel.setText("Contains the text of the file definition:");
         textLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
         
         // 添加从剪贴板粘贴按钮
         Button pasteButton = new Button(inputArea, SWT.PUSH);
-        pasteButton.setText("从剪贴板粘贴");
+		pasteButton.setText("Paste from clipboard");
         pasteButton.setLayoutData(new GridData(SWT.END, SWT.CENTER, false, false));
         
         Button clearButton = new Button(inputArea, SWT.PUSH);
-        clearButton.setText("清空");
+		clearButton.setText("Clear");
         clearButton.setLayoutData(new GridData(SWT.END, SWT.CENTER, false, false));
         
         textInput = new Text(inputArea, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
@@ -166,7 +166,7 @@ public class InputDialog extends Dialog {
         
         // 文件列表标签
         Label filesLabel = new Label(previewArea, SWT.NONE);
-		filesLabel.setText("files will be generated:");
+		filesLabel.setText("Files to be generated");
         filesLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
         
         // 文件列表
@@ -185,7 +185,7 @@ public class InputDialog extends Dialog {
         
         // 文件内容预览标签
         Label contentLabel = new Label(previewArea, SWT.NONE);
-        contentLabel.setText("文件内容:");
+		contentLabel.setText("File Contents:");
         contentLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
         
         // 文件内容预览
@@ -322,7 +322,7 @@ public class InputDialog extends Dialog {
 
     @Override
     protected void createButtonsForButtonBar(Composite parent) {
-        createButton(parent, IDialogConstants.OK_ID, "生成文件", true);
+		createButton(parent, IDialogConstants.OK_ID, "Generate files", true);
         createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
 		buttonsCreated = true; // 标记按钮已创建
 
