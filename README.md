@@ -176,7 +176,7 @@ EclipseFileGenerator设计为与大语言模型无缝协作，加速您的开发
 
 示例：
 
-``// File: src/main/java/com/example/model/User.java
+```// File: src/main/java/com/example/model/User.java
 package com.example.model;
 
 public class User {
@@ -212,7 +212,7 @@ public User findById(Long id) {
 // 实现代码
 return null;
 }
-}``
+}```
 
 2. **生成文件**：
 - 将模板复制到剪贴板
