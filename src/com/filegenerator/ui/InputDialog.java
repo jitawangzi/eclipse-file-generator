@@ -66,7 +66,7 @@ public class InputDialog extends Dialog {
 
     private void detectModules() {
         // 添加主项目
-        moduleNames.add(project.getName() + " (主项目)");
+		moduleNames.add(project.getName() + " (main project)");
         modulePaths.add(project.getLocation().toOSString());
         
         // 尝试检测Maven模块
@@ -117,7 +117,7 @@ public class InputDialog extends Dialog {
         
         // 模块选择
         Label moduleLabel = new Label(inputArea, SWT.NONE);
-        moduleLabel.setText("目标模块:");
+		moduleLabel.setText("target project:");
         moduleLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
         
         moduleCombo = new Combo(inputArea, SWT.READ_ONLY);
@@ -154,7 +154,7 @@ public class InputDialog extends Dialog {
         
         // 预览按钮
         previewButton = new Button(inputArea, SWT.PUSH);
-        previewButton.setText("预览文件");
+		previewButton.setText("preview files");
         GridData previewBtnGd = new GridData(SWT.END, SWT.CENTER, false, false);
         previewBtnGd.horizontalSpan = 3;
         previewButton.setLayoutData(previewBtnGd);
@@ -166,7 +166,7 @@ public class InputDialog extends Dialog {
         
         // 文件列表标签
         Label filesLabel = new Label(previewArea, SWT.NONE);
-        filesLabel.setText("将要生成的文件:");
+		filesLabel.setText("files will be generated:");
         filesLabel.setLayoutData(new GridData(SWT.BEGINNING, SWT.CENTER, false, false));
         
         // 文件列表
