@@ -59,7 +59,7 @@ This workflow dramatically reduces the time needed to implement features and ens
 - Use `// File: path/to/file.ext` to mark the beginning of each file
 
 Example:
-
+```
 // File: src/main/java/com/example/model/User.java
 package com.example.model;
 
@@ -97,13 +97,14 @@ public User findById(Long id) {
 return null;
 }
 }
+```
 
 2. **Generating Files**:
 - Copy your template to clipboard
 - Right-click on your project in Eclipse
 - Select "Batch Generate Files"
 - The plugin will automatically detect files and display them for preview
-- Click "Batch Generate Files" to create all files
+- Click "Generate Files" to create all files
 
 3. **Restoring Files**:
 - Right-click on a project
@@ -221,7 +222,7 @@ return null;
 - 在Eclipse中右键点击您的项目
 - 选择"Batch Generate Files"
 - 插件将自动检测文件并显示预览
-- 点击"Batch Generate Files"创建所有文件
+- 点击"Generate Files"创建所有文件
 
 3. **恢复文件**：
 - 右键点击项目
