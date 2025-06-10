@@ -28,7 +28,7 @@ EclipseFileGenerator is an Eclipse plugin designed to simplify file generation f
 ### Installation
 
 1. **Manual Installation**:
-   - Download the latest `.jar` file from the [Releases](https://github.com/jitawangzi/EclipseFileGenerator/releases) page
+   - Download the latest `.jar` file from the [Releases](https://github.com/jitawangzi/eclipse-file-generator/releases) page
    - Place it in your Eclipse's `dropins` folder
    - Restart Eclipse
 
@@ -148,7 +148,7 @@ EclipseFileGenerator是一款Eclipse插件，旨在简化从文本模板生成�
 ### 安装方法
 
 1. **手动安装**：
-- 从[Releases](https://github.com/jitawangzi/EclipseFileGenerator/releases)页面下载最新的`.jar`文件
+- 从[Releases](https://github.com/jitawangzi/eclipse-file-generator/releases)页面下载最新的`.jar`文件
 - 将其放入Eclipse的`dropins`文件夹中
 - 重启Eclipse
 
