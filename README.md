@@ -2,7 +2,7 @@
 
 A powerful Eclipse plugin that generates files from text templates using "// File:" markers. Perfectly integrates with LLMs (Large Language Models) to transform AI-generated code into actual project files.
 
-一款功能强大的Eclipse插件，通过使用"// File:"标记从文本模板生成文件。完美集成大语言模型(LLM)，将AI生成的代码转换为实际项目文件。
+一款功能强大的Eclipse插件，通过使用"// File:"标记从文本模板生成文件。适合将AI生成的代码转换为实际项目文件。
 
 [English](#english) | [中文](#chinese)
 
