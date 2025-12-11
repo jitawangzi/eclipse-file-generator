@@ -111,4 +111,61 @@
          </command>
       </menuContribution>
    </extension>
+    <extension
+          point="org.eclipse.ui.commands">
+        <!-- 已有命令：Batch Generate Files（示例） -->
+        <command
+              id="com.filegenerator.batchGenerateFiles"
+              name="Batch Generate Files">
+        </command>
+
+        <!-- 新增：Apply LLM Patch -->
+        <command
+              id="com.filegenerator.applyPatch"
+              name="Apply LLM Patch">
+        </command>
+    </extension>
+
+    <extension
+          point="org.eclipse.ui.handlers">
+        <!-- 已有 handler：Batch Generate Files（示例） -->
+        <handler
+              class="com.filegenerator.ui.GenerateFilesHandler"
+              commandId="com.filegenerator.batchGenerateFiles">
+        </handler>
+
+        <!-- 新增 handler：Apply LLM Patch -->
+        <handler
+              class="com.filegenerator.ui.ApplyPatchHandler"
+              commandId="com.filegenerator.applyPatch">
+        </handler>
+    </extension>
+
+    <extension
+          point="org.eclipse.ui.menus">
+        <!-- 右键项目弹出菜单 -->
+        <menuContribution
+              allPopups="false"
+              locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+            <menu
+                  id="com.filegenerator.menu"
+                  label="File Generator">
+                <!-- 原有菜单项：Batch Generate Files（示例） -->
+                <command
+                      commandId="com.filegenerator.batchGenerateFiles"
+                      id="com.filegenerator.menu.batchGenerateFiles"
+                      label="Batch Generate Files"
+                      style="push">
+                </command>
+
+                <!-- 新增菜单项：Apply LLM Patch -->
+                <command
+                      commandId="com.filegenerator.applyPatch"
+                      id="com.filegenerator.menu.applyPatch"
+                      label="Apply LLM Patch"
+                      style="push">
+                </command>
+            </menu>
+        </menuContribution>
+    </extension>
 </plugin>

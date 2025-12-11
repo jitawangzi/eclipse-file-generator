@@ -36,7 +36,7 @@ public class BackupManager {
     // 当前活动的会话
     private BackupSession currentSession;
     
-    private BackupManager() {
+	public BackupManager() {
         log = Platform.getLog(Platform.getBundle("com.filegenerator"));
         loadSessions();
     }
