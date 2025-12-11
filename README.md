@@ -2,7 +2,7 @@
 
 A powerful Eclipse plugin that generates files from text templates using "// File:" markers. Perfectly integrates with LLMs (Large Language Models) to transform AI-generated code into actual project files.
 
-一款功能强大的Eclipse插件，通过使用"// File:"标记从文本模板生成文件。完美集成大语言模型(LLM)，将AI生成的代码转换为实际项目文件。
+一款功能强大的Eclipse插件，通过使用"// File:"标记从文本模板生成文件。适合将AI生成的代码转换为实际项目文件。
 
 [English](#english) | [中文](#chinese)
 
@@ -28,7 +28,7 @@ EclipseFileGenerator is an Eclipse plugin designed to simplify file generation f
 ### Installation
 
 1. **Manual Installation**:
-   - Download the latest `.jar` file from the [Releases](https://github.com/jitawangzi/EclipseFileGenerator/releases) page
+   - Download the latest `.jar` file from the [Releases](https://github.com/jitawangzi/eclipse-file-generator/releases) page
    - Place it in your Eclipse's `dropins` folder
    - Restart Eclipse
 
@@ -59,7 +59,7 @@ This workflow dramatically reduces the time needed to implement features and ens
 - Use `// File: path/to/file.ext` to mark the beginning of each file
 
 Example:
-
+```
 // File: src/main/java/com/example/model/User.java
 package com.example.model;
 
@@ -97,13 +97,14 @@ public User findById(Long id) {
 return null;
 }
 }
+```
 
 2. **Generating Files**:
 - Copy your template to clipboard
 - Right-click on your project in Eclipse
 - Select "Batch Generate Files"
 - The plugin will automatically detect files and display them for preview
-- Click "Batch Generate Files" to create all files
+- Click "Generate Files" to create all files
 
 3. **Restoring Files**:
 - Right-click on a project
@@ -136,7 +137,7 @@ EclipseFileGenerator是一款Eclipse插件，旨在简化从文本模板生成�
 
 ### 主要特性
 
-- **LLM集成**：完美接收AI模型输出，实现快速实现
+- **LLM集成**：通过固定格式提示词，接收AI模型输出，实现快速创建文件。 
 - **轻松生成文件**：从单一文本模板创建多个文件
 - **智能路径检测**：根据项目结构（Maven、Gradle、Eclipse插件等）自动调整文件路径
 - **剪贴板集成**：直接从剪贴板粘贴内容
@@ -147,7 +148,7 @@ EclipseFileGenerator是一款Eclipse插件，旨在简化从文本模板生成�
 ### 安装方法
 
 1. **手动安装**：
-- 从[Releases](https://github.com/jitawangzi/EclipseFileGenerator/releases)页面下载最新的`.jar`文件
+- 从[Releases](https://github.com/jitawangzi/eclipse-file-generator/releases)页面下载最新的`.jar`文件
 - 将其放入Eclipse的`dropins`文件夹中
 - 重启Eclipse
 
@@ -176,6 +177,7 @@ EclipseFileGenerator设计为与大语言模型无缝协作，加速您的开发
 
 示例：
 
+```
 // File: src/main/java/com/example/model/User.java
 package com.example.model;
 
@@ -213,13 +215,14 @@ public User findById(Long id) {
 return null;
 }
 }
+```
 
 2. **生成文件**：
 - 将模板复制到剪贴板
 - 在Eclipse中右键点击您的项目
 - 选择"Batch Generate Files"
 - 插件将自动检测文件并显示预览
-- 点击"Batch Generate Files"创建所有文件
+- 点击"Generate Files"创建所有文件
 
 3. **恢复文件**：
 - 右键点击项目
